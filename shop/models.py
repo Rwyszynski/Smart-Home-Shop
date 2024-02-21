@@ -9,7 +9,7 @@ class Products(models.Model):
     voltage = models.PositiveSmallIntegerField(default=24)
     power = models.PositiveSmallIntegerField()
     current = models.DecimalField(max_digits=6, decimal_places=2)
-    protocol = models.CharField()
+    protocol = models.CharField(blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __str__(self):
