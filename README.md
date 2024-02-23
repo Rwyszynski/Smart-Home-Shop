@@ -1,4 +1,4 @@
-#Website that show a functionality of Django. You can browse a product, create account, add product to the cart, and place an order.
+# Website that show a functionality of Django. You can browse a product, create account, add product to the cart, and place an order.
 
 ## How to use it:
 * Go to the website
