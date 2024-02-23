@@ -6,7 +6,7 @@
 * Test the product on the correct tab
 * You can go to the checkout, and order a product by folmular
 
-##Used technologies:
+## Used technologies:
 * Python
 * Django
 * JS
