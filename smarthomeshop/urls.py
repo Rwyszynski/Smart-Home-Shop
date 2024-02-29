@@ -16,10 +16,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from shop.views import main_page
+from shop.views import main_page, about, shop, contact
+from orders.views import show, checkout
+from accounts.views import login, logout
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('main/', main_page),
-]
+    path('main/', main_page, name="main"),
+    path('about/', about, name="about"),
+    path('shop/', shop, name="shop"),
+    path('show/', show, name="show"),
+    path('checkout/', checkout, name="checkout"),
+    path('login/', login, name="login"),
+    path('logout/', logout, name="logout"),
+    path('contact/', contact, name="contact"),
+
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

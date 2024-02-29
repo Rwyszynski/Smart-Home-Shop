@@ -1,19 +1,14 @@
 {% extends 'mother.html' %}
 
-{% title %} Strona główna {% endblock %}
+{% block title %} Strona główna {% endblock %}
 
-{% page %} 
-
-
+{% block page %} 
 
 
 
 
-
-
-
-
-
-
+{% for Product in Products%}
+<p> {{ Product }} </p>
+{% endfor %}
 
 {% endblock %}
