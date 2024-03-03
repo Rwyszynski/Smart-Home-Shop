@@ -21,7 +21,7 @@ from orders.views import show, checkout
 from accounts.views import login, logout
 from django.conf import settings
 from django.conf.urls.static import static
-
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,8 +30,10 @@ urlpatterns = [
     path('shop/', shop, name="shop"),
     path('show/', show, name="show"),
     path('checkout/', checkout, name="checkout"),
-    path('login/', login, name="login"),
+    path('login/', login, name="login"),  # czy to usunąć
     path('logout/', logout, name="logout"),
     path('contact/', contact, name="contact"),
+    path('login/', auth_views.LoginView.as_view()),
+    path('loout/', auth_views.LogoutView.as_view()),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

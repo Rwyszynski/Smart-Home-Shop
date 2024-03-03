@@ -7,6 +7,8 @@ def main_page(request):
     atall = Products.objects.all()
     return render(request, 'main.html', {'Products': atall})
 
+# Brakuje kodu by pokażywać wsztkie info o produkcie
+
 
 def about(request):
     return render(request, 'about.html')

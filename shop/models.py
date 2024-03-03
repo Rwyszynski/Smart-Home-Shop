@@ -14,3 +14,6 @@ class Products(models.Model):
 
     def __str__(self):
         return str(self.model)
+
+
+# Chcę aby wszystkie modele zapisywały się w PostgreSQL
