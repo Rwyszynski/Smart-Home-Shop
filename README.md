@@ -12,5 +12,4 @@
 * JS
 * PostgreSQL
 * GIT
-* REST API
 * AWS
