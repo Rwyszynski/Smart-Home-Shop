@@ -1,11 +1,11 @@
 from django.db import models
-from orders.views import *
 from shop.views import *
 from accounts.views import *
+from django.contrib.auth.models import User
 
 
 class Client(models.Model):
-    user = models.CharField(max_length=20, null=True)
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=20, null=True)
     phone = models.CharField(max_length=20, null=True)
     email = models.CharField(max_length=30, null=True)

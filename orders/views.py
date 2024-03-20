@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 
-from Products.models import Products
-from .models import *
-
+from shop.models import Products
+from orders.models import Order, OrderProduct
+from accounts.models import Client
 
 def show(request):
     return render(request, 'show.html')
@@ -60,7 +60,7 @@ def remove_from_cart(request, product_id):
 
 def checkout(request):
     if request.user.is_authenticated:
-        customer = request.user.customer
+        customer = Client.objects.get(user=request.user)
         order, created = Order.objects.get_or_create(
             customer=customer, complete=False)
         items = order.orderproduct_set.all()

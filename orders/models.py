@@ -1,14 +1,14 @@
 from django.db import models
 
-import Accounts.models as accounts_models
-import Products.models as products_models
+import accounts.models as accounts_models
+import shop.models as products_models
 
 # Create your models here.
 
 
 class Order(models.Model):
     customer = models.ForeignKey(
-        accounts_models.Customer, on_delete=models.SET_NULL, blank=True, null=True)
+        accounts_models.Client, on_delete=models.SET_NULL, blank=True, null=True)
     date_ordered = models.DateTimeField(auto_now_add=True)
     complete = models.BooleanField(default=False)
     transaction_id = models.CharField(max_length=100, null=True)
@@ -45,7 +45,7 @@ class OrderProduct(models.Model):
 
 class ShippingAddress(models.Model):
     customer = models.ForeignKey(
-        accounts_models.Customer, on_delete=models.SET_NULL, blank=True, null=True)
+        accounts_models.Client, on_delete=models.SET_NULL, blank=True, null=True)
     order = models.ForeignKey(
         Order, on_delete=models.SET_NULL, blank=True, null=True)
     name = models.CharField(max_length=200, null=True)

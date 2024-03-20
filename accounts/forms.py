@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.contrib.auth.models import User
-from .models import Customer
+from accounts.models import Client
 
 
 class CreateUserForm(UserCreationForm):
@@ -12,7 +12,7 @@ class CreateUserForm(UserCreationForm):
 
 class AddressForm(forms.ModelForm):
     class Meta:
-        model = Customer
+        model = Client
         exclude = ['user']
 
     address = forms.CharField(
